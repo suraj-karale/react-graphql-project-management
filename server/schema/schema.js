@@ -11,6 +11,7 @@ const {
   GraphQLSchema,
   GraphQLList,
 } = require("graphql");
+
 // Project Type
 const ProjectType = new GraphQLObjectType({
   name: "Project",
