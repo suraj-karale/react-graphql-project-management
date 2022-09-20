@@ -1,12 +1,12 @@
-# Getting Started
+### MERN STACK PROJECT MANAGEMENT
 
 1. add mongodb connection url in .env file
 2. npm i
 3. npm run dev for development mode
 
-https://www.youtube.com/watch?v=BcLNfwF04Kw&t=1860s
+## Live Demo - https://mern-todo-suraj.netlify.app/
 
-# GraphQL Queries & Mutations
+### GraphQL Queries & Mutations
 
 Execute all query in `http://localhost:5000/graphql` interface
 
