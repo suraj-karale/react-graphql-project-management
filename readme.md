@@ -1,6 +1,6 @@
 # MERN STACK PROJECT - PROJECT MANAGEMENT
 
-1. add mongodb connection url in .env file
+1. add mongodb connection url, port and environment in .env file
 2. npm i
 3. npm run dev for development mode
 
