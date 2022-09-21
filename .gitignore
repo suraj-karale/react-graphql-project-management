@@ -4,3 +4,6 @@ node_modules/
 *.orig
 .idea/
 .vscode/
+
+/build
+/client/build
