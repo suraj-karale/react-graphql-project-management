@@ -4,7 +4,7 @@
 2. npm i
 3. npm run dev for development mode
 
-## Live Demo - https://mern-todo-suraj.netlify.app/
+## Live Demo - https://project-management-suraj.herokuapp.com/
 
 # GraphQL Queries & Mutations
 
