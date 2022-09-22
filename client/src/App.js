@@ -29,12 +29,12 @@ const cache = new InMemoryCache({
 const client = new ApolloClient({
   uri:
     process.env.NODE_ENV === "production"
-      ? `http://${process.env.PORT}/graphql`
+      ? `http://33865/graphql`
       : "http://5000/graphql",
   cache,
 });
 
-console.log("client", process.env, client);
+console.log("client", client);
 
 function App() {
   return (
