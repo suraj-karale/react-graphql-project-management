@@ -26,13 +26,10 @@ const cache = new InMemoryCache({
   },
 });
 
-console.log('process.env App.js', process.env)
+console.log("process.env App.js", process.env);
 
 const client = new ApolloClient({
-  uri:
-    process.env.NODE_ENV === "production"
-      ? process.env.REACT_APP_SERVER_GRAPHQL
-      : process.env.REACT_APP_CLIENT_GRAPHQL,
+  uri: "/graphql",
   cache,
 });
 
