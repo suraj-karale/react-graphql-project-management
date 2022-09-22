@@ -27,14 +27,11 @@ const cache = new InMemoryCache({
 });
 
 const client = new ApolloClient({
-  uri:
-    process.env.NODE_ENV === "production"
-      ? "https://flyby-gateway.herokuapp.com/"
-      : "http://localhost:5000/graphql",
+  uri: `http://${process.env.REACT_APP_PORT}/graphql`,
   cache,
 });
 
-console.log("client", client);
+console.log("client", process.env);
 
 function App() {
   return (
