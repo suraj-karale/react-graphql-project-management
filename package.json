@@ -3,22 +3,23 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "set PORT=5000 && nodemon server/index.js",
-    "start": "set PORT=33865 && node server/index.js",
+    "dev": "nodemon server/index.js",
+    "start": "node server/index.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "apollo-server": "^3.10.2",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "express-graphql": "^0.12.0",
     "graphql": "^15.8.0",
     "mongoose": "^6.5.2",
-    "react-icons": "^4.4.0",
-    "dotenv": "^16.0.2"
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"

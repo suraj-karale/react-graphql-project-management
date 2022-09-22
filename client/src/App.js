@@ -26,18 +26,13 @@ const cache = new InMemoryCache({
   },
 });
 
-server.listen({ port: process.env.PORT || 5000 }).then(({ url }) => {
-  console.log(`
-    🚀  Server is ready at ${url}
-    📭  Query at https://studio.apollographql.com/dev
-  `);
-});
+console.log('process.env App.js', process.env)
 
 const client = new ApolloClient({
   uri:
     process.env.NODE_ENV === "production"
-      ? `http://33865/graphql`
-      : "http://5000/graphql",
+      ? process.env.REACT_APP_SERVER_GRAPHQL
+      : process.env.REACT_APP_CLIENT_GRAPHQL,
   cache,
 });
 
