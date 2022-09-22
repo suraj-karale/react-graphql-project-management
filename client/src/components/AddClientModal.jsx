@@ -11,7 +11,12 @@ export default function AddClientModal() {
 
   const [addClient] = useMutation(ADD_CLIENT, {
     variables: { name, email, phone },
-    update(cache, { data: { addClient } }) {
+    update(
+      cache,
+      {
+        data: { addClient },
+      }
+    ) {
       const { clients } = cache.readQuery({ query: GET_CLIENTS });
 
       cache.writeQuery({
@@ -45,7 +50,7 @@ export default function AddClientModal() {
       >
         <div className="d-flex align-items-center">
           <FaUser className="icon" />
-          <div>Add Client</div>
+          <div style={{ marginLeft: "10px" }}>Add Client</div>
         </div>
       </button>
 

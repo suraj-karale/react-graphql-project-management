@@ -13,7 +13,12 @@ export default function AddProjectModal() {
 
   const [addProject] = useMutation(ADD_PROJECT, {
     variables: { name, description, clientId, status },
-    update(cache, { data: { addProject } }) {
+    update(
+      cache,
+      {
+        data: { addProject },
+      }
+    ) {
       const { projects } = cache.readQuery({ query: GET_PROJECTS });
       cache.writeQuery({
         query: GET_PROJECTS,
@@ -55,7 +60,7 @@ export default function AddProjectModal() {
           >
             <div className="d-flex align-items-center">
               <FaList className="icon" />
-              <div>New Project</div>
+              <div style={{ marginLeft: "10px" }}>New Project</div>
             </div>
           </button>
 
