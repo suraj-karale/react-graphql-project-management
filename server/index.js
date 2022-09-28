@@ -16,6 +16,19 @@ app.use(cors());
 
 __dirname = path.resolve();
 
+/**
+ * app.use()
+ * the middleware function is executed when the base of the requested path matches path.
+ */
+ app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    graphiql: true // Since we configured graphqlHTTP with graphiql: true, you can use the GraphiQL tool to manually issue GraphQL queries
+  })
+)
+
+
 if (
   process.env.NODE_ENV === "production" ||
   process.env.NODE_ENV === "staging"
@@ -24,14 +37,11 @@ if (
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "public", "index.html"));
   });
-} else {
-  app.use(
-    "/graphql",
-    graphqlHTTP({
-      schema,
-      graphiql: process.env.NODE_ENV === "development",
-    })
-  );
+}  else {
+  app.get('/', (req, res) => {
+    res.status(200).json({ message: 'Welcome to the Project Management App' })
+  })
 }
+
 
 app.listen(port, console.log(`Server running on port ${port}`));
