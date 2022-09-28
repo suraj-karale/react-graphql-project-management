@@ -11,11 +11,12 @@ export default function Clients() {
 
   return (
     <>
+      <h3 className="mt-3 ml-3">Client List</h3>
       {!loading && !error && (
         <table className="table table-striped mt-3">
           <thead>
             <tr>
-              <th>Name</th>
+              <th>Client Name</th>
               <th>Email</th>
               <th>Phone</th>
               <th></th>

@@ -18,6 +18,7 @@ export default function EditProjectForm({ project }) {
         throw new Error(`Unknown status: ${project.status}`);
     }
   });
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const [updateProject] = useMutation(UPDATE_PROJECT, {
     variables: { id: project.id, name, description, status },
@@ -32,6 +33,10 @@ export default function EditProjectForm({ project }) {
     }
 
     updateProject(name, description, status);
+    setShowSuccessMessage(true);
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+    }, 5000);
   };
 
   return (
@@ -72,8 +77,13 @@ export default function EditProjectForm({ project }) {
         </div>
 
         <button type="submit" className="btn btn-primary">
-          Submit
+          Update Project  
         </button>
+        {showSuccessMessage && (
+          <div className="alert alert-success mt-3" role="alert">
+            Project updated successfully!
+          </div>
+        )}
       </form>
     </div>
   );
