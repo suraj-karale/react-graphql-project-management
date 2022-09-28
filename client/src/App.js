@@ -29,7 +29,7 @@ const cache = new InMemoryCache({
 console.log("process.env App.js", process.env);
 
 const client = new ApolloClient({
-  uri: process.env.NODE_ENV === 'production' ? 'https://graphql-apollo-server.herokuapp.com/graphql' : 'http://localhost:5000/graphql',
+  uri: process.env.NODE_ENV === 'production' ? 'https://project-management-suraj.herokuapp.com/graphql' : 'http://localhost:5000/graphql',
   cache,
 });
 
